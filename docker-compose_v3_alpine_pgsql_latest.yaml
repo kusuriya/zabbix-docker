@@ -142,7 +142,7 @@ services:
 #   - ./.ZBX_DB_CA_FILE:/run/secrets/root-ca.pem:ro
 #   - ./.ZBX_DB_CERT_FILE:/run/secrets/client-cert.pem:ro
 #   - ./.ZBX_DB_KEY_FILE:/run/secrets/client-key.pem:ro
-env_file:
+  env_file:
    - .env_db_pgsql
    - .env_web
   secrets:
