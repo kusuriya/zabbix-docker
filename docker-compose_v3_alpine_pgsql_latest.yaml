@@ -51,8 +51,6 @@ services:
 
  zabbix-proxy-sqlite3:
   image: zabbix/zabbix-proxy-sqlite3:alpine-5.4-latest
-  profiles:
-   - all
   ports:
    - "10061:10051"
   volumes:
@@ -87,8 +85,6 @@ services:
 
  zabbix-proxy-mysql:
   image: zabbix/zabbix-proxy-mysql:alpine-5.4-latest
-  profiles:
-   - all
   ports:
    - "10071:10051"
   volumes:
@@ -129,8 +125,6 @@ services:
 
  zabbix-web-apache-pgsql:
   image: zabbix/zabbix-web-apache-pgsql:alpine-5.4-latest
-  profiles:
-   - all
   ports:
    - "8081:8080"
    - "8443:8443"
@@ -223,9 +217,6 @@ services:
 
  zabbix-agent:
   image: zabbix/zabbix-agent:alpine-5.4-latest
-  profiles:
-   - full
-   - all
   ports:
    - "10050:10050"
   volumes:
@@ -254,9 +245,6 @@ services:
 
  zabbix-java-gateway:
   image: zabbix/zabbix-java-gateway:alpine-5.4-latest
-  profiles:
-   - full
-   - all
   ports:
    - "10052:10052"
   env_file:
@@ -275,9 +263,6 @@ services:
 
  zabbix-snmptraps:
   image: zabbix/zabbix-snmptraps:alpine-5.4-latest
-  profiles:
-   - full
-   - all
   ports:
    - "162:1162/udp"
   volumes:
@@ -296,9 +281,6 @@ services:
 
  zabbix-web-service:
   image: zabbix/zabbix-web-service:alpine-5.4-latest
-  profiles:
-   - full
-   - all
   ports:
    - "10053:10053"
   volumes:
@@ -321,8 +303,6 @@ services:
 
  mysql-server:
   image: mysql:8.0
-  profiles:
-   - all
   command:
    - mysqld
    - --character-set-server=utf8
@@ -367,8 +347,6 @@ services:
 
  db_data_mysql:
   image: busybox
-  profiles:
-   - all
   volumes:
    - ./zbx_env/var/lib/mysql:/var/lib/mysql:rw
 
